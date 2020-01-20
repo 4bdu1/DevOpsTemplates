@@ -75,7 +75,6 @@ t.add_resource(Role(
     )
 ))
 
-
 t.add_resource(InstanceProfile(
     "InstanceProfile",
     Path="/",

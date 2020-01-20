@@ -132,7 +132,7 @@ states = {
 }
 
 for reservation in {"CPU", "Memory"}:
-    for state, value in states.iteritems():
+    for state, value in states.items():
         t.add_resource(Alarm(
             "{}ReservationToo{}".format(reservation, state),
             AlarmDescription="Alarm if {} reservation too {}".format(

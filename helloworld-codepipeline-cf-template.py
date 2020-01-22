@@ -3,7 +3,7 @@
 from awacs.aws import Allow, Policy, Principal, Statement
 from awacs.sts import AssumeRole
 from troposphere import GetAtt, Ref, Template
-from troposphere.codepipeline import (Actions, ActionTypeID, ArtifactStore,
+from troposphere.codepipeline import (Actions, ActionTypeId, ArtifactStore,
                                       InputArtifacts, OutputArtifacts,
                                       Pipeline, Stages)
 from troposphere.iam import Policy as IAMPolicy
@@ -93,7 +93,7 @@ t.add_resource(Pipeline(
             Actions=[
                 Actions(
                     Name="Source",
-                    ActionTypeId=ActionTypeID(
+                    ActionTypeId=ActionTypeId(
                         Category="Source",
                         Owner="ThirdParty",
                         Version="1",
@@ -118,7 +118,7 @@ t.add_resource(Pipeline(
             Actions=[
                 Actions(
                     Name="Container",
-                    ActionTypeId=ActionTypeID(
+                    ActionTypeId=ActionTypeId(
                         Category="Build",
                         Owner="AWS",
                         Version="1",
@@ -145,7 +145,7 @@ t.add_resource(Pipeline(
             Actions=[
                 Actions(
                     Name="Deploy",
-                    ActionTypeId=ActionTypeID(
+                    ActionTypeId=ActionTypeId(
                         Category="Deploy",
                         Owner="AWS",
                         Version="1",
@@ -176,7 +176,7 @@ t.add_resource(Pipeline(
             Actions=[
                 Actions(
                     Name="Approval",
-                    ActionTypeId=ActionTypeID(
+                    ActionTypeId=ActionTypeId(
                         Category="Approval",
                         Owner="AWS",
                         Version="1",
@@ -192,7 +192,7 @@ t.add_resource(Pipeline(
             Actions=[
                 Actions(
                     Name="Deploy",
-                    ActionTypeId=ActionTypeID(
+                    ActionTypeId=ActionTypeId(
                         Category="Deploy",
                         Owner="AWS",
                         Version="1",
